@@ -1,8 +1,3 @@
-def greeting(persons):
-    for name, last in persons:
-        print(f'hello {name} {last}')
-persons = [['ali', 'rezaei'], ['kamran', 'tafti'], ['reza', 'golzar']]
-greeting(persons)
 
 def odd_or_even(list):
     res = ['even' if n%2==0 else 'odd' for n in list]
@@ -13,7 +8,7 @@ def files_merge(names,l_names,ages):
     for person in zip(names,l_names,ages):
         print(person)
 names = ['reza','majid','babak']
-l_names = ['golzar','salehi','rahnama khanande number 1 tarikh ta abad']
+l_names = ['golzar','salehi','rahnama']
 ages = [48,53,41]
 
 files_merge(names,l_names,ages)
@@ -77,4 +72,22 @@ class Solution:
             sum = sum * 10 + (tmp % 10)
             tmp = int(tmp/10)
         return sum == x
+
+#4
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        vals = {
+            'I': 1, 'V': 5, 'X': 10, 'L': 50,
+            'C': 100, 'D': 500, 'M': 1000
+        }
+
+        result = 0
+        n = len(s)
+        for i in range(n):
+            if i + 1 < n and vals[s[i]] < vals[s[i + 1]]:
+                result -= vals[s[i]]
+            else:
+                result += vals[s[i]]
+
+        return result
         
