@@ -138,3 +138,14 @@ class Solution:
             
         return dummy.next
 
+#7
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        l = []
+        for num in nums:
+            if num not in l: 
+                l.append(num)        
+        for i in range(len(l)):
+            nums[i] = l[i]
+        
+        return len(l) 
