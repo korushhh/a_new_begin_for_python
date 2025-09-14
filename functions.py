@@ -149,3 +149,22 @@ class Solution:
             nums[i] = l[i]
         
         return len(l) 
+#dictioneries
+grades = {
+    'ali': 93,
+    'reza': 44,
+    'nika': 77,
+    'jamshid': 34,
+    'taraneh': 96,
+    'parham': 50
+}
+
+def tops(grades):
+    names = []
+    for key, value in grades.items(): 
+        if value >= 80:
+            names.append(key)
+    return names  
+
+    
+
