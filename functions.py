@@ -189,3 +189,16 @@ class Solution:
                 return i
         return len(nums)
 
+#10
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        s = s.strip()
+        if not s:
+            return 0
+        s = s[::-1]
+        counter = 0
+        for ch in s:
+            if ch == ' ':
+                return counter
+            counter += 1
+        return counter
