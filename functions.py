@@ -251,3 +251,13 @@ class Solution:
             else:
                 tmp = tmp.next  
         return head
+#15
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        mag_list = list(magazine)  
+        for char in ransomNote:
+            if char in mag_list:
+                mag_list.remove(char)  
+            else:
+                return False
+        return True
